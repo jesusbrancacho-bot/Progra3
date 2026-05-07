@@ -97,3 +97,17 @@ public class Estudiante {
     }
 }
 </pre>
+
+
+# Herencia
+==================================================================================================================================================================
+- Permite crear nuevas clases que reutilizan, extienden y modifican el comportamiento que se define en otra clases. La clase cuyos miembros se heredan se denomina ***clase base*** y la clase que hereda se denomina ***clase derivada***. Un clase derivada solo puede tener una clase base directa.
+
+<img width="1331" height="579" alt="image" src="https://github.com/user-attachments/assets/acb05256-370a-4d47-afe4-a5d5794a2d7e" />
+
+
+
+
+
+
+
