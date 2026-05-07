@@ -17,6 +17,9 @@
     private double CRAEST;
 
     public Estudiante() {
+        //Se utilza esto para:
+        //- La asignación de valores más tarde: Crea el objeto primero y luego le asigna valores
+        //- 
     }
 
     public Estudiante(String nombre, double CRAEST) {
@@ -24,3 +27,12 @@
         this.CRAEST = CRAEST;
     }
 } </pre>
+
+
+
+<pre> 
+ Estudiante estudiante1 = new Estudiante();  // Se crea un objeto sin valores definidos
+ estudiante1.setNombre("Ana");
+ estudiante1.setCRAEST(16.5);   
+</pre>
+
