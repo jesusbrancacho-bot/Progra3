@@ -10,6 +10,7 @@
 - Una clase es un tipo de Dato, cuyas instancias son objetos.
 - Una clase contiene la descripción de los datos y métodos de un conjunto de objetos.
 
+### Constructor de una Clase
 <pre> 
     public class Estudiante {
     private String nombre;
