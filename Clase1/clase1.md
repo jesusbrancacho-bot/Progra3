@@ -11,6 +11,8 @@
 - Una clase contiene la descripción de los datos y métodos de un conjunto de objetos.
 
 ### Constructor de una Clase
+
+##### En Java
 <pre> 
     public class Estudiante {
     private String nombre;
@@ -40,4 +42,20 @@ Constructor con parámetros sirve para que le pueda asignar los valores mientras
 
 <pre> 
 Estudiante estudiante2 = new Estudiante("Carlos", 19.2);  // Se crea un objeto con los valores definidos
+</pre>
+
+##### En C#
+<pre>
+public class Estudiante {
+    private string nombre;
+    private double CRAEST;
+
+    public Estudiante() {
+    }
+
+    public Estudiante(string nombre, double CRAEST) {
+        this.nombre = nombre;
+        this.CRAEST = CRAEST;
+    }
+}
 </pre>
