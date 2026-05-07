@@ -29,10 +29,15 @@
 } </pre>
 
 
-
+Constructor sin parámetros sirve para que le pueda asignar los valores después de crearlos.
 <pre> 
  Estudiante estudiante1 = new Estudiante();  // Se crea un objeto sin valores definidos
  estudiante1.setNombre("Ana");
  estudiante1.setCRAEST(16.5);   
 </pre>
 
+Constructor con parámetros sirve para que le pueda asignar los valores mientras se construye el objeto
+
+<pre> 
+Estudiante estudiante2 = new Estudiante("Carlos", 19.2);  // Se crea un objeto con los valores definidos
+</pre>
