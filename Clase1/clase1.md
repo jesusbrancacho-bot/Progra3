@@ -106,7 +106,7 @@ public class Estudiante {
 <img width="1331" height="579" alt="image" src="https://github.com/user-attachments/assets/acb05256-370a-4d47-afe4-a5d5794a2d7e" />
 
 
-### En Java
+##### En Java
 
 <pre>
 // Clase base: Profesor
@@ -163,6 +163,134 @@ public class Main {
 </pre>
 
 
+<pre>
+##### En C#
+// Clase base: Profesor
+public class Profesor {
+    private string nombre;
+    private int edad;
+    private string asignatura;
+
+    // Constructor de la clase Profesor
+    public Profesor(string nombre, int edad, string asignatura) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.asignatura = asignatura;
+    }
+
+    // Método para obtener los detalles del profesor
+    public string obtenerDetalles() {
+        return $"Nombre: {nombre}, Edad: {edad}, Asignatura: {asignatura}";
+    }
+}
+
+// Clase derivada: ProfesorTiempoParcial
+public class ProfesorTiempoParcial : Profesor {
+    private int cantHorasDictadoPorSemana;
+    private double tarifaPorHora;
+
+    // Constructor de la clase ProfesorTiempoParcial
+    public ProfesorTiempoParcial(string nombre, int edad, string asignatura, int cantHorasDictadoPorSemana, double tarifaPorHora)
+        : base(nombre, edad, asignatura) { // Llama al constructor de la clase base
+        this.cantHorasDictadoPorSemana = cantHorasDictadoPorSemana;
+        this.tarifaPorHora = tarifaPorHora;
+    }
+
+    // Método para calcular el salario mensual
+    public double calcularSalarioMensual() {
+        return cantHorasDictadoPorSemana * tarifaPorHora * 4; // 4 semanas al mes
+    }
+
+    // Sobrescribir el método obtenerDetalles para incluir más información
+    public new string obtenerDetalles() {
+        return base.obtenerDetalles() + $", Horas por semana: {cantHorasDictadoPorSemana}, Tarifa por hora: {tarifaPorHora}";
+    }
+}
+
+// Uso de las clases
+class Program {
+    static void Main() {
+        ProfesorTiempoParcial profesor = new ProfesorTiempoParcial("Juan Pérez", 40, "Matemáticas", 10, 50);
+        Console.WriteLine(profesor.obtenerDetalles());
+        Console.WriteLine($"Salario mensual: {profesor.calcularSalarioMensual()}");
+    }
+}
+</pre>
+
+### Polimorfismo
+Propiedad de enviar mensajes sintacticamente iguales a objetos de tipos distintos. El único requisito que deben cumplir los objetos que se utilizan de manera polimorfica es saber responder a los mensajes que se envía.
+
+### Tipos:
+
+#### De Subtipo
+Capacidad de una clase base de comportarse como cualquier objeto de una clase derivada de esa misma clase base. Se implementa mediante herencia y métodos virtuales y abstractos.
+<img width="1335" height="577" alt="image" src="https://github.com/user-attachments/assets/2d26edd1-27af-49e8-9260-3d31435466e1" />
+
+**Clase figura**
+<pre>
+public class Figura {
+    public double base;
+    public double altura;
+
+    public Figura(double base, double altura){
+        this.base = base;
+        this.altura = altura;
+    }
+
+    public void calcularArea(){
+        System.out.println("Procedimiento para calcular el area");
+    }
+}
+</pre>
+
+**Clase Triangulo**
+<pre>
+public class Triangulo extends Figura {
+
+    public Triangulo(double base, double altura){
+        super(base, altura);
+    }
+
+    @Override
+    public void calcularArea(){
+        System.out.println(base * altura / 2);
+    }
+}
+</pre>
+
+<pre>
+public class Cuadrado extends Figura {
+
+    public Cuadrado(double base, double altura){
+        super(base, altura);
+    }
+
+    @Override
+    public void calcularArea(){
+        System.out.println(base * altura);
+    }
+}
+</pre>
+
+<pre>
+public class Principal {
+
+    public static void main(String[] args){
+        Figura t1 = new Triangulo(10,20);
+        Figura c1 = new Cuadrado(10,20);
+        
+        t1.calcularArea(); 
+        c1.calcularArea();
+        
+        Triangulo t2 = new Triangulo(10,20);
+        Cuadrado c2 = new Cuadrado(10,20);
+        
+        t2.calcularArea(); 
+        c2.calcularArea();
+    }
+}
+</pre>
 
 
-
+<pre>
+</pre>
