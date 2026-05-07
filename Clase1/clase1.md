@@ -258,6 +258,7 @@ public class Triangulo extends Figura {
 }
 </pre>
 
+**Clase Cuadrado**
 <pre>
 public class Cuadrado extends Figura {
 
@@ -272,6 +273,8 @@ public class Cuadrado extends Figura {
 }
 </pre>
 
+
+**Clase Principal**
 <pre>
 public class Principal {
 
