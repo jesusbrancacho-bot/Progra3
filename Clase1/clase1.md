@@ -10,7 +10,8 @@
 - Una clase es un tipo de Dato, cuyas instancias son objetos.
 - Una clase contiene la descripción de los datos y métodos de un conjunto de objetos.
 
-<pre> ```public class Estudiante {
+<pre> 
+    public class Estudiante {
     private String nombre;
     private double CRAEST;
 
@@ -21,4 +22,4 @@
         this.nombre = nombre;
         this.CRAEST = CRAEST;
     }
-} ``` </pre>
+} </pre>
