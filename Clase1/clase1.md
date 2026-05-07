@@ -10,3 +10,4 @@
 - Una clase es un tipo de Dato, cuyas instancias son objetos.
 - Una clase contiene la descripción de los datos y métodos de un conjunto de objetos.
 
+<pre> ```java print("Hola mundo") ``` </pre>
