@@ -59,3 +59,41 @@ public class Estudiante {
     }
 }
 </pre>
+
+
+### Destructor de una clase
+En Java y C# no es necesario implementar un método destructor, ya que el Garbage Collector libera la memoria cuando las instancias de los objetos de los objetos no quedan referenciados.
+
+
+##### En Java
+
+<pre>
+public class Estudiante {
+    private String nombre;
+    private double CRAEST;
+
+    public Estudiante() {
+    }
+
+    public void finalize() {
+        System.out.println("El objeto se esta destruyendo");
+    }
+}
+</pre>
+
+
+##### En C#
+
+<pre>
+public class Estudiante {
+    private string nombre;
+    private double CRAEST;
+
+    public Estudiante() {
+    }
+
+    ~Estudiante() {
+        System.Console.WriteLine("Se esta destruyendo un objeto");
+    }
+}
+</pre>
