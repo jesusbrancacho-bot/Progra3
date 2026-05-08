@@ -1,4 +1,4 @@
-# Objeto
+<img width="525" height="254" alt="image" src="https://github.com/user-attachments/assets/a0f831bd-6fed-48ce-a9d5-e08c4a0af8a7" /># Objeto
 ==================================================================================================================================================================
 - Representación del estado y comportamiento de un ***objeto real*** o abstracto
 - **Estado** está representado por un conjunto de datos.
@@ -586,12 +586,232 @@ Las clases anidadas son útiles cuando tienes una clase que está estrechamente 
 - Acceso limitado: Si una clase debe tener un acceso muy restringido y solo ser utilizada dentro de la clase exterior.
 - Mejora del diseño: Si el comportamiento de una clase está completamente dependiente de la clase exterior, puede mejorar la legibilidad y organización del código al definirla como anidada.
 
+
+#### Enumerados
+La enumeración (también denominado enum) proporciona una manera eficaz de definir un conjunto de constantes integrales con nombre que pueden asignarse a una variable.
+
+**En Java**
 <pre>
+enum Dias {
+    Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sabado
+}
+
+public class Principal {
+    public static void main(String[] args) {
+        Dias d = Dias.Domingo;
+    }
+}
+</pre>
+
+**En C#**
+<pre>
+enum Dias {
+    Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sabado
+}
+
+public class Principal {
+    public static void Main(string[] args) {
+        Dias hoyDia = Dias.Lunes;
+    }
+}
 </pre>
 
 
+#### Arreglos
 <pre>
+public class Prueba {
+    public static void Main() {
+        // Unidimensionales
+        int[] a = {0,1,2,3,4,5,6,7,8,9};
+        int[] b = new int[10] {0,1,2,3,4,5,6,7,8,9};
+
+        // Múltiples dimensiones
+        int[,] aa = { {0,0},{1,1},{2,2} };
+        int[,] bb = new int[2,3];
+
+        // Matrices escalonadas
+        int[][] aaa = new int[3][]; //Cantidad de filas
+        aaa[0] = new int[2]; //Cantidad de columnas en fila 0
+        aaa[1] = new int[3]; //Cantidad de columnas en fila 1
+        aaa[2] = new int[4]; //Cantidad de columnas en fila 2
+    }
+}
 </pre>
 
+<pre>
+public class Arreglo {
+    public static void main(String[] args) {
+        // Unidimensionales
+        int[] a = {0,1,2,3,4,5,6,7,8,9};
+        int[] b = new int[10]{0,1,2,3,4,5,6,7,8,9};
+
+        // Matrices escalonadas
+        int[][] bb = new int[3][]; //Cantidad de filas
+        bb[0] = new int[2]; //Cantidad de columnas en la fila 1
+        bb[1] = new int[3]; //Cantidad de columnas en la fila 2
+        bb[2] = new int[4]; //Cantidad de columnas en la fila 3
+
+        int[][] aa = {
+            {6,7,5,0},
+            {1,0,2,7},
+            {9,5}
+        };
+    }
+}
+</pre>
+
+#### Indizadores
+
+Los ***indizadores*** son un tipo especial de ***propiedad*** en algunos lenguajes de programación, como C#, que permiten a un objeto ser accedido de forma similar a un ***arreglo***. A través de un indizador, puedes acceder a los elementos de un objeto usando índices, tal como lo harías con un arreglo, pero sin necesidad de declarar explícitamente un arreglo.
+
+En C#
+***Departamento***
+<pre>
+public class Departamento {
+    private string[] empleados = new string[10];
+
+    // Indizador que permite acceder a los empleados como si fuera un arreglo
+    public string this[int indice] {
+        set {
+            empleados[indice] = value;  // Asignar valor al índice
+        }
+        get {
+            return empleados[indice];  // Obtener valor del índice
+        }
+    }
+}
+</pre>
+
+***Principal***
+<pre>
+public class Principal {
+    public static void Main() {
+        Departamento d = new Departamento();
+        d[0] = "Juan";
+        d[1] = "Marco";
+        System.Console.WriteLine(d[0]);
+        System.Console.WriteLine(d[1]);
+    }
+}
+</pre>
+
+#### Manejo de Fechas - Date JAVA
+
+***En C#***
+<pre>
+using System;
+
+public class Principal {
+    public static void Main(string[] args){
+        DateTime fecha = DateTime.ParseExact("18-03-2024 15:00", 
+            "dd-MM-yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+        System.Console.WriteLine(fecha.ToString("dd-MM-yyyy HH:mm"));
+    }
+}   
+</pre>
+
+***En JAVA***
+<pre>
+import java.util.Date;
+import java.text.SimpleDateFormat;
+
+public class Principal {
+    public static void main(String[] args) throws Exception {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        Date fecha = sdf.parse("18-03-2024 15:00");
+        System.out.println(sdf.format(fecha));
+    }
+}
+</pre>
+
+#### Lectura por consola
+
+***En C#***
+<pre>
+public class Principal {
+    public static void Main(string[] args){
+        string nombre = System.Console.ReadLine();
+        System.Console.WriteLine(nombre);
+    }
+}
+</pre>
+
+***En JAVA***
+Primera forma
+<pre>
+import java.util.Scanner;
+
+public class Principal {
+    public static void main(String[] args){
+        String nombre;
+        Scanner teclado = new Scanner(System.in);
+        nombre = teclado.nextLine();
+        System.out.println(nombre);
+    }
+}    
+</pre>
+
+Segunda forma
+<pre>
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Principal {
+    public static void main(String[] args) throws Exception {
+        String nombre;
+        BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
+        nombre = teclado.readLine();
+        System.out.println(nombre);
+    }
+}
+</pre>
+
+#### Manejo de Listas
+
+***En C#***
+<pre>
+using System.Collections.Generic;
+
+class Empleado{
+    public string nombre;
+    public Empleado(string nombre) { this.nombre = nombre; }
+}
+
+public class Principal{
+    public static void Main(string[] args){
+        Empleado emp1 = new Empleado("Juan");
+        Empleado emp2 = new Empleado("Andrea");
+        List<Empleado> empleados = new List<Empleado>();
+        empleados.Add(emp1); empleados.Add(emp2);
+        foreach(Empleado emp in empleados) {
+            System.Console.WriteLine(emp.nombre);
+        }
+    }
+}
+</pre>
+
+***BlindingList***
+<pre>
+using System.ComponentModel;
+
+class Empleado{
+    public string nombre;
+    public Empleado(string nombre) { this.nombre = nombre; }
+}
+
+public class Principal{
+    public static void Main(string[] args){
+        Empleado emp1 = new Empleado("Juan");
+        Empleado emp2 = new Empleado("Andrea");
+        BindingList<Empleado> empleados = new BindingList<Empleado>();
+        empleados.Add(emp1); empleados.Add(emp2);
+        foreach(Empleado emp in empleados) {
+            System.Console.WriteLine(emp.nombre);
+        }
+    }
+}
+</pre>
+<pre>
+</pre>
 <pre>
 </pre>
