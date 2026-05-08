@@ -431,6 +431,160 @@ public class Main {
 
 <img width="1239" height="510" alt="image" src="https://github.com/user-attachments/assets/51de1827-2d49-4810-b763-f4b1046a5991" />
 
+**En Java**
+<pre>
+interface IOperaciones {
+    void realizarConsultaMedica();
+}
+
+public class Cirujano implements IOperaciones {
+    @Override
+    public void realizarConsultaMedica() {
+        System.out.println("El cirujano está realizando una cirugía");
+    }
+
+    public static void main(String[] args) {
+        Cirujano cirujano = new Cirujano();
+        cirujano.realizarConsultaMedica();
+    }
+}
+</pre>
+
+***En C#**
+<pre>
+interface IOperaciones {
+    void realizarConsultaMedica();
+}
+
+public class Cirujano : IOperaciones {
+    public void realizarConsultaMedica() {
+        System.Console.WriteLine("El cirujano está realizando una cirugía");
+    }
+
+    public static void Main(string[] args) {
+        Cirujano cirujano = new Cirujano();
+        cirujano.realizarConsultaMedica();
+    }
+}
+</pre>
+
+#### Miembros Estáticos
+- Constituyen datos, métodos y tipos que forman parte de un tipo de dato (por ejemplo, una clase) pero que no requieren una instancia de este para ser utilizados.
+
+- Los miembros estáticos en programación son aquellos que pertenecen a la clase en sí, en lugar de a las instancias de la clase. Esto significa que puedes acceder a ellos sin necesidad de crear un objeto de la clase. A continuación, te doy ejemplos en Java y C# para ilustrar cómo funcionan.
+
+***En Java***
+<pre>
+public class Contador {
+    // Miembro estático
+    public static int cuenta = 0;
+
+    // Método estático
+    public static void incrementarCuenta() {
+        cuenta++;
+    }
+
+    public static void main(String[] args) {
+        // Acceder al miembro estático sin crear una instancia
+        Contador.incrementarCuenta();
+        System.out.println("Cuenta: " + Contador.cuenta);  // Salida: Cuenta: 1
+    }
+}
+</pre>
+
+***En C#***
+<pre>
+using System;
+
+public class Contador {
+    // Miembro estático
+    public static int cuenta = 0;
+
+    // Método estático
+    public static void IncrementarCuenta() {
+        cuenta++;
+    }
+
+    public static void Main() {
+        // Acceder al miembro estático sin crear una instancia
+        Contador.IncrementarCuenta();
+        Console.WriteLine("Cuenta: " + Contador.cuenta);  // Salida: Cuenta: 1
+    }
+}
+</pre>
+
+
+### Clase Anidada
+- Es una clase definida como miembro de otra clase.
+- En general, un tipo de dato definido dentro de otro se le llama tipo de dato anidado.
+- Se le conoce como clase ***inner***, y a la clase dentro de la que se definen, clase ***outer***.
+
+**En Java**
+
+***Clase inner Computador y clase outer Microprocesador***
+<pre>
+public class Computador {
+    public void imprimir(){
+        System.out.println("Imprimir desde Computador");
+    }
+
+    public class Microprocesador {
+        public void imprimir(){
+            System.out.println("Imprimir desde Microprocesador");
+        }
+    }
+}
+</pre>
+
+***Clase principal***
+<pre>
+public class Principal {
+    public static void main(String[] args) {
+        Computador c = new Computador();
+        c.imprimir();
+        Computador.Microprocesador m = c.new Microprocesador();
+        m.imprimir();
+    }
+}
+</pre>
+
+
+***En C#***
+
+<pre>
+public class Computador {
+    public void imprimir(){
+        System.Console.WriteLine("Imprimir desde Computador");
+    }
+
+    public class Microprocesador {
+        public void imprimir(){
+            System.Console.WriteLine("Imprimir desde Microprocesador");
+        }
+    }
+}
+</pre>
+
+
+<pre>
+public class Principal {
+    public static void Main(string[] args) {
+        Computador c = new Computador();
+        c.imprimir();
+        Computador.Microprocesador m = c.new Microprocesador();
+        m.imprimir();
+    }
+}
+</pre>
+
+
+¿Cuándo es correcto usar clases anidadas?
+
+Las clases anidadas son útiles cuando tienes una clase que está estrechamente asociada con otra y no tiene sentido que exista por sí misma. En general, las clases anidadas se utilizan en los siguientes casos:
+
+- Encapsulamiento: Si una clase no tiene sentido sin la clase exterior, se puede usar una clase anidada para ocultarla.
+- Acceso limitado: Si una clase debe tener un acceso muy restringido y solo ser utilizada dentro de la clase exterior.
+- Mejora del diseño: Si el comportamiento de una clase está completamente dependiente de la clase exterior, puede mejorar la legibilidad y organización del código al definirla como anidada.
 
 <pre>
 </pre>
@@ -438,15 +592,6 @@ public class Main {
 
 <pre>
 </pre>
-
-
-<pre>
-</pre>
-
-
-<pre>
-</pre>
-
 
 <pre>
 </pre>
