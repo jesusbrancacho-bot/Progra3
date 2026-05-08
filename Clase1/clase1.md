@@ -368,8 +368,81 @@ Se utiliza para que una variable o método sea accesible dentro de ***su propia 
 
 Es un nivel de acceso intermedio entre private (solo accesible dentro de la clase) y public (accesible desde cualquier parte del código).
 
+
+#### Clase abstracta
+- Puede declarar una clase como abstracta si desea evitar la creación directa de instancias por medio de la palabra clave new. Si hace esto, la clase solo se puede utilizar si una nueva clase se deriva de ella.
+
+- Basta con que un método sea abstracto para que la clase sea abstracta. A las clases que tienen todos sus métodos implementados se les llama "clases concretas". De manera similar, un método declarado y no implementado se le dice "método abstracto", y uno implementado se le dice "método concreto".
+
+<img width="1287" height="566" alt="image" src="https://github.com/user-attachments/assets/f2147b55-e683-4e99-bf5d-e8a70eee54a3" />
+
+***En Java***
+***Clase Persona***
+
+<pre>
+public abstract class Persona {
+    private String codigoPUCP;
+
+    public Persona(String codigoPUCP) {
+        this.codigoPUCP = codigoPUCP;
+    }
+
+    public void imprimirCodigoPUCP() {
+        System.out.println(codigoPUCP);
+    }
+
+    public abstract void realizarActividad();
+}
+</pre>
+
+**Clase derivada de la abstracta***
+<pre>
+public class Estudiante extends Persona {
+
+    public Estudiante(String codigoPUCP) {
+        super(codigoPUCP);  // Llama al constructor de la clase base
+    }
+
+    // Implementación del método abstracto
+    @Override
+    public void realizarActividad() {
+        System.out.println("El estudiante está realizando una actividad académica.");
+    }
+}
+</pre>
+
+**Uso**
+<pre>
+public class Main {
+    public static void main(String[] args) {
+        Estudiante estudiante = new Estudiante("20222828");
+        estudiante.imprimirCodigoPUCP();  // Imprime el código PUCP
+        estudiante.realizarActividad();  // Imprime el mensaje sobre la actividad
+    }
+}   
+</pre>
+
+
+
+### Interfaz
+- Define el comportamiento de una clase, pero no la implementación.
+- Las interfaces se utilizan para definir funciones específicas para las clases que no tienen necesariamente una relación de identidad.
+- No se establece el modo de acceso de los métodos de una interfaz. Por defecto son públicos.
+
+<img width="1239" height="510" alt="image" src="https://github.com/user-attachments/assets/51de1827-2d49-4810-b763-f4b1046a5991" />
+
+
 <pre>
 </pre>
+
+
+<pre>
+</pre>
+
+
+<pre>
+</pre>
+
 
 <pre>
 </pre>
