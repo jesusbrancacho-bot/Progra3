@@ -294,7 +294,7 @@ public class Principal {
 }
 </pre>
 
-***Polimorfismo Paramétrico***
+#### Polimorfismo Paramétrico
 Se refiere a la capacidad  de escribir código que pueda trabajar con ***cualquier tipo de datos***. En este contexto, "paramétrico" se refiere a los parámetros de tipo que se utilizan
 para definir comportamientos o estructuras de datos que pueden ser parametrizados por un tipo específico.
 
@@ -327,12 +327,46 @@ public class Principal {
 </pre>
 
 
+#### Encapsulamiento
+Se refiere a ocultar los detalles internos de un objeto y solo exponer las operaciones o funcionalidades. Consiste en agrupar los datos y los métodos que operan sobre esos datos dentro de una clase y controlar el acceso a estos mediante modificadores de acceso ("private", "public", "protected", etc.). Esto significa que los datos son inaccesibles directamente desde fuera de la clase y solo pueden ser modificados o accedidos mediante métodos específicos proporcionados por la clase (conocidos como **getters** y **setters**).
+
+**En Java**
 <pre>
+public class Estudiante {
+    private String nombre;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+}
 </pre>
 
 
+**En C#**
 <pre>
+public class Estudiante {
+    private string nombre;
+
+    public string Nombre {
+        get {
+            return nombre;
+        }
+        set {
+            this.nombre = value;
+        }
+    }
+}
 </pre>
+
+
+¿Qué significa **protected** en Java y C#?
+Se utiliza para que una variable o método sea accesible dentro de ***su propia clase, por las clases dervidas (subclases) y por clases en el mismo paquete (en Java) o mismo ensamblado (en C#)***.
+
+Es un nivel de acceso intermedio entre private (solo accesible dentro de la clase) y public (accesible desde cualquier parte del código).
 
 <pre>
 </pre>
