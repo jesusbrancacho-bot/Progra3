@@ -1,4 +1,4 @@
-<img width="525" height="254" alt="image" src="https://github.com/user-attachments/assets/a0f831bd-6fed-48ce-a9d5-e08c4a0af8a7" /># Objeto
+# Objeto
 ==================================================================================================================================================================
 - Representación del estado y comportamiento de un ***objeto real*** o abstracto
 - **Estado** está representado por un conjunto de datos.
@@ -790,7 +790,7 @@ public class Principal{
 }
 </pre>
 
-***BlindingList***
+***BindingList***
 <pre>
 using System.ComponentModel;
 
@@ -811,7 +811,120 @@ public class Principal{
     }
 }
 </pre>
+
+***En Java***
 <pre>
+import java.util.ArrayList;
+
+class Empleado{
+    public String nombre;
+    public Empleado(String nombre) { this.nombre = nombre; }
+}
+
+public class Principal{
+    public static void main(String[] args){
+        Empleado emp1 = new Empleado("Juan");
+        Empleado emp2 = new Empleado("Andrea");
+        ArrayList<Empleado> empleados = new ArrayList<>();
+        empleados.add(emp1); empleados.add(emp2);
+        for(Empleado emp : empleados){
+            System.out.println(emp.nombre);
+        }
+    }
+}
 </pre>
+
+#### instanceof (JAVA)- is (C#)
+- Son operadores que se utilizan para comprobar si un objeto es una instancia de una clase específica, una instancia de una subclase o una instancia de una clase que implementa una determinada clase de tipo interface.
+- Los operadores devuelven **true** si el objeto es una instancia de la clase especificada o de alguna de sus subclases, o si el objeto implementa la interface especificada. De lo contrario, devuelve ***false***.
+
+#### En Java
 <pre>
+class Auto extends Vehiculo { }
+class Moto extends Vehiculo { }
+class Vehiculo { }
+
+public class Principal {
+    public static void main(String[] args) {
+        Vehiculo veh01 = new Auto();
+        Vehiculo veh02 = new Moto();
+        System.out.println(veh01 instanceof Vehiculo);
+        System.out.println(veh01 instanceof Auto);
+        System.out.println(veh01 instanceof Moto);
+    }
+}
 </pre>
+
+#### En C#
+<pre>
+class Auto : Vehiculo { }
+class Moto : Vehiculo { }
+class Vehiculo { }
+
+public class Principal {
+    public static void Main(string[] args) {
+        Vehiculo veh01 = new Auto();
+        Vehiculo veh02 = new Moto();
+        System.Console.WriteLine(veh01 is Vehiculo);
+        System.Console.WriteLine(veh01 is Auto);
+        System.Console.WriteLine(veh01 is Moto);
+    }
+}
+</pre>
+
+#### Programando relaciones entre clases
+
+<img width="1315" height="643" alt="image" src="https://github.com/user-attachments/assets/a490f861-0328-4bd8-97c1-d37c693ef760" />
+
+<pre>
+import java.util.ArrayList;
+
+class Cliente{
+    private ArrayList<OrdenCompra> ordenesCompra;
+
+    public ArrayList<OrdenCompra> getOrdenesCompra(){
+        return ordenesCompra;
+    }
+
+    public void setOrdenesCompra(ArrayList<OrdenCompra> ordenesCompra){
+        this.ordenesCompra = ordenesCompra;
+    }
+}
+
+class OrdenCompra{
+    private Cliente cliente;
+
+    public Cliente getCliente(){
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente){
+        this.cliente = cliente;
+    }
+}
+</pre>
+
+La clase OrdenCompra tiene los métodos set y get para el atributo cliente porque cliente es una referencia a un objeto de la clase Cliente. Estos métodos permiten acceder a este atributo y modificarlo de forma controlada.
+
+<pre>
+using System.ComponentModel;
+
+class Cliente{
+    private BindingList<OrdenCompra> ordenesCompra;
+
+    public BindingList<OrdenCompra> OrdenesCompra{
+        get{ return ordenesCompra; }
+        set{ this.ordenesCompra = value; }
+    }
+}
+
+class OrdenCompra{
+    private Cliente cliente;
+
+    public Cliente Cliente{
+        get{ return cliente; }
+        set{ this.cliente = value; }
+    }
+}
+</pre>
+
