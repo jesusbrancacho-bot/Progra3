@@ -294,6 +294,52 @@ public class Principal {
 }
 </pre>
 
+***Polimorfismo Paramétrico***
+Se refiere a la capacidad  de escribir código que pueda trabajar con ***cualquier tipo de datos***. En este contexto, "paramétrico" se refiere a los parámetros de tipo que se utilizan
+para definir comportamientos o estructuras de datos que pueden ser parametrizados por un tipo específico.
+
+<pre>
+public class Contenedor<T> {
+    public T dato;
+
+    public Contenedor(T dato) {
+        this.dato = dato;
+    }
+
+    public void imprimirTipoDato() {
+        System.out.println(dato.getClass().getSimpleName());
+    }
+}
+</pre>
+
+
+
+<pre>
+public class Principal {
+    public static void main(String[] args) {
+        Contenedor<Integer> contenedorEntero = new Contenedor<>(10);
+        Contenedor<String> contenedorString = new Contenedor<>("Hola");
+
+        contenedorEntero.imprimirTipoDato();
+        contenedorString.imprimirTipoDato();
+    }
+}
+</pre>
+
+
+<pre>
+</pre>
+
+
+<pre>
+</pre>
+
+<pre>
+</pre>
+
+<pre>
+</pre>
+
 
 <pre>
 </pre>
