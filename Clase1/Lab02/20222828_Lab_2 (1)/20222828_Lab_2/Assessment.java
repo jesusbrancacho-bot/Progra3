@@ -2,6 +2,9 @@ import java.util.Date;
 import java.util.List;
 
 
+//Cuando me habla de clases que representan una relación de composicion
+// Relacion de 1 a muchos, ejm: casa 1 --- 1, * habitaciones
+
 class Assessment {
 	private int durationMinutes;
 	private Date startDate;
