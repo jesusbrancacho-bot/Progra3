@@ -34,19 +34,19 @@ public class Main {
 
 		List<Question> questionsSelected = questionManager.selectRandomN(3);
 
-		List<AssesmentItem> items = new ArrayList<>();
+		List<AssessmentItem> items = new ArrayList<>();
 
-		items.add(new AssesmentItem(questionsSelected.get(0), 2));
-		items.add(new AssesmentItem(questionsSelected.get(1), 5));
-		items.add(new AssesmentItem(questionsSelected.get(2), 3));
+		items.add(new AssessmentItem(questionsSelected.get(0), 2));
+		items.add(new AssessmentItem(questionsSelected.get(1), 5));
+		items.add(new AssessmentItem(questionsSelected.get(2), 3));
 
-		Assesment assessment = new Assesment(
+		Assessment assessment = new Assessment(
 				120,
 				new Date(),
 				teachers,
 				items
 		);
 
-		AsessmentViewer.show(assessment);
+		AssessmentViewer.show(assessment);
 	}
 }

@@ -5,18 +5,18 @@ import java.util.List;
 class MultipleChoiceQuestion extends Question{
 
 	private List<Integer> correctOptions;
-	
+
 	public MultipleChoiceQuestion(int code, String prompt, List<String> options, List<Number> respuestas){
 		super(code,prompt,options);
 		this.correctOptions = new ArrayList<>();
 	}
-	
 
-	
+
+
 	public void setRespuestas(List<Integer>respuestas){
 		this.correctOptions = new ArrayList<>(respuestas);
 	}
-	
+
 	public List<Integer>getRespuestas(){
 		return this.correctOptions;
 	}

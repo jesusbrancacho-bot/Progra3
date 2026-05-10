@@ -1,15 +1,14 @@
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 
-class Assesment {
+class Assessment {
 	private int durationMinutes;
 	private Date startDate;
 	private List<Teacher> teachers;
-	private List<AssesmentItem> items;
+	private List<AssessmentItem> items;
 
-	public Assesment(int durationMinutes, Date startDate, List<Teacher> teachers, List<AssesmentItem> items){
+	public Assessment(int durationMinutes, Date startDate, List<Teacher> teachers, List<AssessmentItem> items){
 		this.durationMinutes = durationMinutes;
 		this.startDate = startDate;
 		this.teachers = teachers;
@@ -28,7 +27,7 @@ class Assesment {
 		return teachers;
 	}
 
-	public List<AssesmentItem> getItems() {
+	public List<AssessmentItem> getItems() {
 		return items;
 	}
 }

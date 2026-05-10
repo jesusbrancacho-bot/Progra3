@@ -4,7 +4,7 @@ import java.util.List;
 
 class SingleChoiceQuestion extends Question{
 	int correctOption;
-	
+
 	public SingleChoiceQuestion( int code, String prompt,List<String> options, int correctOption){
 		super(code,prompt,options);
 		this.correctOption = correctOption;
@@ -13,7 +13,7 @@ class SingleChoiceQuestion extends Question{
 	public void setRespuesta(int respuesta){
 		this.correctOption = respuesta;
 	}
-	
+
 	public int getRespuesta(){
 		return this.correctOption;
 	}
