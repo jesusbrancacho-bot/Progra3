@@ -87,3 +87,50 @@ namespace Principales {
 
 }
 ```
+- El **namespace** organiza el código, y el **using** evita tener que escribir rutas largas.
+- También es posible no utilizar la palabra clave **using** y acceder a un clase escribiendo su ruta completa, incluyendo el espacio de nombres, aunque esto puede hacer el código más extenso y menos legible.
+
+# Clase Operacion.cs
+
+```csharp
+namespace Matematicas {
+
+    class Operacion {
+
+        public int Sumar(int a, int b) {
+            return a + b;
+        }
+
+    }
+
+}
+```
+
+
+```csharp
+namespace Principales {
+
+    class Principal {
+
+        public static void Main() {
+
+            Matematicas.Operacion op = new Matematicas.Operacion();
+
+            Console.WriteLine(op.Sumar(10, 20));
+
+        }
+
+    }
+
+}
+```
+
+# ¿Por qué la clase Operacion es accesible desde otro espacio de nombres a pesar de no ser pública?
+
+- En C#, una clase que no tiene modificador de acceso se define por defecto como `internal`.
+
+- El modificador `internal` permite que la clase sea accesible dentro del mismo ensamblado.
+
+- Esto significa que cualquier clase dentro del mismo proyecto puede utilizarla sin necesidad de que sea pública.
+
+- Sin embargo, la clase no podrá ser utilizada desde otros ensamblados o proyectos externos.
