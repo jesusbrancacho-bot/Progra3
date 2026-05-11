@@ -134,3 +134,68 @@ namespace Principales {
 - Esto significa que cualquier clase dentro del mismo proyecto puede utilizarla sin necesidad de que sea pública.
 
 - Sin embargo, la clase no podrá ser utilizada desde otros ensamblados o proyectos externos.
+
+# Modificadores de acceso en clases en C#
+
+- En C#, las clases pueden definirse con distintos modificadores de acceso que determinan su visibilidad.
+
+- Por defecto, una clase se define como `internal`, lo que significa que solo es accesible dentro del mismo ensamblado.
+
+- El modificador `public` permite que la clase sea accesible desde cualquier proyecto que la referencie.
+
+- El modificador `internal` restringe el acceso únicamente a las clases que se encuentran dentro del mismo proyecto.
+
+<img width="836" height="280" alt="image" src="https://github.com/user-attachments/assets/482ad744-d604-4c06-8085-3e13ffd5d3ae" />
+
+# Diferencia con JAVA
+
+- En Java, el acceso de las clases está determinado por el paquete, mientras que en C# está determinado por el ensamblado.
+
+- En Java, las clases pueden definirse como `public` o sin modificador de acceso.
+
+- Una clase `public` puede ser utilizada desde cualquier paquete del sistema.
+
+- Una clase sin modificador se considera de acceso por defecto (`default`), y solo es accesible dentro del mismo paquete.
+
+# Organización del Código en C#
+
+- En C#, los espacios de nombres representan una organización lógica del código y no dependen directamente de la estructura física de carpetas.
+
+- Sin embargo, es posible crear carpetas dentro del proyecto para organizar mejor los archivos.
+
+- Esta organización física facilita la comprensión, el mantenimiento y la escalabilidad del sistema.
+
+- Aunque no es obligatorio mantener coherencia entre carpetas y espacios de nombres, es una buena práctica.
+
+
+# Proyecto de Biblioteca de Clases en C#
+
+- Un proyecto de biblioteca de clases permite crear código reutilizable que puede ser utilizado por múltiples aplicaciones.
+
+- Este tipo de proyecto no genera un programa ejecutable, sino un ensamblado en formato DLL.
+
+- La DLL contiene clases, métodos y otros componentes que encapsulan la lógica del sistema.
+
+- Estas bibliotecas pueden ser referenciadas desde otros proyectos para compartir funcionalidad.
+
+
+# Creación de una Biblioteca de Clases en C#
+
+- Una biblioteca de clases puede ser creada utilizando la herramienta de línea de comandos de .NET.
+
+- El comando:
+
+```bash
+dotnet new classlib -n MiLibreria
+```
+permite generar un proyecto de tipo librería.
+
+Este proyecto está diseñado para compilarse en un ensamblado en formato DLL.
+El comando:
+```bash
+dotnet build
+```
+compila el proyecto y genera el archivo DLL con el código reutilizable.
+Esta DLL puede ser referenciada desde otras aplicaciones para reutilizar su funcionalidad.
+
+
