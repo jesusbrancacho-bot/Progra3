@@ -9,7 +9,7 @@
 - Al ser una extensión de sentencias previas, también puede generar objetos `ResultSet` al ejecutarse y soporta la agrupación de operaciones para actualizaciones por lotes (`Statement` y `PreparedStatement` soportan también actualización por lotes).
 
 
-
+```sql
 -- Se define el siguiente procedimiento almacenado en MySQL el cual recibe dos parámetros:
 -- _id_area el cual es un parámetro OUT
 -- _nombre el cual es un parámetro IN
@@ -27,3 +27,4 @@ BEGIN
 END$
 
 DELIMITER ;
+```
