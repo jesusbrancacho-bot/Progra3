@@ -65,3 +65,23 @@ namespace Matematicas {
     }
 
 }
+
+
+```csharp
+namespace Principales {
+
+    using Matematicas;
+
+    class Principal {
+
+        public static void Main() {
+
+            Operacion op = new Operacion();
+
+            Console.WriteLine(op.Sumar(10, 20));
+
+        }
+
+    }
+
+}
