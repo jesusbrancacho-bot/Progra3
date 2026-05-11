@@ -70,13 +70,69 @@
 <img width="966" height="467" alt="image" src="https://github.com/user-attachments/assets/a9650bab-9020-4601-b849-c3176fc9b227" />
 <img width="943" height="477" alt="image" src="https://github.com/user-attachments/assets/91db6e5a-eb13-4ce8-8e75-1af56b47417a" />
 <img width="951" height="477" alt="image" src="https://github.com/user-attachments/assets/f93186ae-eff1-4206-a662-b4cb17b209d0" />
+<img width="990" height="512" alt="image" src="https://github.com/user-attachments/assets/f39b2f3d-e21c-4028-8548-7ea58cf20b75" />
+<img width="999" height="521" alt="image" src="https://github.com/user-attachments/assets/c2e44d19-794a-430b-bb1a-3a89882b76b9" />
+<img width="998" height="360" alt="image" src="https://github.com/user-attachments/assets/f5f38ccb-709c-4e38-b060-87a8585a2302" />
+<img width="987" height="377" alt="image" src="https://github.com/user-attachments/assets/482e4297-d4ea-49bb-9917-ee0840aaaa04" />
+<img width="1007" height="441" alt="image" src="https://github.com/user-attachments/assets/23a70e57-6132-4d94-85fa-9025fddb6b22" />
+<img width="998" height="460" alt="image" src="https://github.com/user-attachments/assets/cf277f10-e1a9-416c-a0f7-6b83b0de0a4d" />
+<img width="976" height="563" alt="image" src="https://github.com/user-attachments/assets/1925114f-661a-4f58-980f-cb0981aa01fa" />
+<img width="1054" height="546" alt="image" src="https://github.com/user-attachments/assets/4d4f41ee-8824-4695-8d54-ca6add0ef1f5" />
+
+# Gestión de Proyectos con Apache Maven
+## Introducción a Apache Maven
+
+- **Definición:** Es una herramienta de gestión de proyectos y automatización de compilación (build tool) basada en el concepto de POM (*Project Object Model*).
+
+- **Gestión de Dependencias:** Se encarga de descargar y administrar automáticamente las bibliotecas externas desde repositorios centrales (Maven Central).
+
+- **Ciclo de Vida Estándar:** Define fases estrictas para construir, probar y desplegar software, asegurando que el proceso sea reproducible en cualquier entorno.
+
+- **Estructura Uniforme:** Impone una estructura de directorios estandarizada, lo que facilita la interoperabilidad y el mantenimiento del código fuente entre distintos equipos de desarrollo.
 
 
+<img width="1001" height="510" alt="image" src="https://github.com/user-attachments/assets/63a207ee-3356-4de5-94a3-74f02fd9816a" />
+
+## Configuración de Variables de Entorno (PATH)
+La variable `PATH` permite que el sistema operativo localice el ejecutable de Maven desde cualquier directorio en la terminal.
+
+## Windows (Temporal):
+```set PATH="C:\ruta\apache-maven\bin";%PATH% ```
+
+Windows (Permanente):
+Acceda a ***Variables de Entorno*** en las ***Propiedades del Sistema***.
+En ***Variables del sistema***, seleccione ***Path*** y haga **clic** en ***Editar***.
+Agregue una nueva entrada con la ruta absoluta a la carpeta bin de Maven.
+Verificación:
+mvn -version
+
+# El Project Object Model (POM)
+
+- **Archivo pom.xml:** Es la unidad fundamental de configuración en Maven. Contiene la declaración de dependencias, plugins, perfiles de construcción y metadatos del proyecto.
+
+- **Identificadores del Artefacto:** Cada proyecto se define mediante:
+
+  - `groupId`: Identificador del dominio u organización.
+
+  - `artifactId`: Nombre técnico del módulo o proyecto.
+
+  - `version`: Estado específico del desarrollo (ej. `1.0.0-SNAPSHOT`).
 
 
+<img width="993" height="538" alt="image" src="https://github.com/user-attachments/assets/fe37d76c-1a2a-4082-be91-ef8d054e8b9d" />
+<img width="1041" height="535" alt="image" src="https://github.com/user-attachments/assets/21682ae9-dc90-4eac-93bb-0466d8d7dfe0" />
+<img width="1068" height="563" alt="image" src="https://github.com/user-attachments/assets/54086b4d-1469-48c4-9f3a-cb9f9d945298" />
 
 
+# Proyectos Multimódulo
 
+- **Proyecto Padre (Aggregator):** Debe declarar obligatoriamente el empaquetado: ```xml<packaging>pom</packaging>```. Su función es definir la lista de subdirectorios en la sección ```<modules>``` y centralizar configuraciones globales.
+
+- Mecanismo de Herencia: Los módulos hijos referencian al padre mediante la etiqueta <parent>, heredando automáticamente dependencias, propiedades de versiones y configuraciones de plugins, garantizando la consistencia en todo el sistema.
+
+<img width="914" height="548" alt="image" src="https://github.com/user-attachments/assets/6515b208-0a63-49de-a7a6-16faf72b86df" />
+<img width="1039" height="547" alt="image" src="https://github.com/user-attachments/assets/fedd933d-89c6-4908-a71e-bc33c275b785" />
+<img width="1019" height="557" alt="image" src="https://github.com/user-attachments/assets/364a5bc6-fe7d-4f4c-a14c-65d9e015ae0c" />
 
 
 
