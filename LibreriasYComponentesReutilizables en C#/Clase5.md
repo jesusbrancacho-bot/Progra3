@@ -187,4 +187,44 @@ namespace Principales {
 - El comando:```dotnet build```compila el proyecto y genera el archivo DLL con el código reutilizable.
 - Esta DLL puede ser referenciada desde otras aplicaciones para reutilizar su funcionalidad.
 
+<img width="820" height="183" alt="image" src="https://github.com/user-attachments/assets/dcddbabe-1a93-4a6d-a2e4-02d0c3033b76" />
 
+# Consumo de una Biblioteca de Clases en .NET
+
+- Una biblioteca de clases puede ser utilizada por otra aplicación mediante la incorporación de su ensamblado o mediante una referencia directa al proyecto.
+
+- Existen dos formas principales de consumir una biblioteca de clases en .NET: **mediante una referencia al proyecto**, cuando se dispone del código fuente o la biblioteca ha sido desarrollada por nosotros, y **mediante un proceso manual** utilizando directamente el archivo DLL.
+
+
+# Mediante una Referencia al Proyecto
+
+- Este enfoque se emplea cuando se dispone del código fuente de la biblioteca o cuando ha sido desarrollada dentro de la misma solución.
+
+- La referencia se realiza utilizando el comando `dotnet add reference`, indicando la ruta del proyecto de biblioteca.
+
+- Una vez establecida la referencia, la aplicación puede utilizar las clases públicas de la biblioteca de forma directa.
+
+- Además, cualquier cambio en la biblioteca se refleja automáticamente al recompilar la aplicación.
+
+<img width="747" height="357" alt="image" src="https://github.com/user-attachments/assets/c7acc0a8-e94c-4fb9-b95e-1c071b384738" />
+
+# Mediante una Referencia al Proyecto
+
+- De forma automática, se genera en el archivo `.csproj`
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <ItemGroup>
+        <ProjectReference Include="..\Matematicas\Matematicas.csproj" />
+    </ItemGroup>
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+</Project>
+```
