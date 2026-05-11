@@ -147,6 +147,85 @@ mvn -version
 - **Efecto Cascada:** Maven es jerárquico. Si ejecutas `mvn install`, Maven ejecutará automáticamente `compile` y `package` antes de instalar.
 
 
+# Conexión a una BD con Java y Maven
+# Introducción a JDBC
+
+## Definición:
+API estándar de Java (parte de `java.sql`) que permite la conexión y ejecución de operaciones en bases de datos relacionales de forma independiente al motor (MySQL, PostgreSQL, Oracle).
+
+## Arquitectura:
+Actúa como una capa de abstracción entre la aplicación Java y el sistema gestor de base de datos (RDBMS).
+
+## El Driver:
+Utiliza un controlador específico (archivo `.jar`) que traduce las llamadas de Java al protocolo nativo de la base de datos seleccionada.
+
+## Flujo de Trabajo:
+
+1. Cargar el Driver (automático en JDBC 4.0+).
+2. Establecer la conexión mediante `DriverManager`.
+3. Crear una sentencia (`Statement` o `PreparedStatement`).
+4. Ejecutar la consulta y procesar los resultados (`ResultSet`).
+5. Cerrar los recursos.
+
+
+# Manejo de Dependencias con Maven
+
+## Declaración en XML:
+Las dependencias se definen dentro de la etiqueta `<dependencies>` en el archivo `pom.xml`.
+
+## Descarga Automática:
+Cuando ejecutas un comando de Maven, este verifica tu Repositorio Local (carpeta `.m2`). Si la librería no está, la descarga automáticamente.
+
+## Dependencias Transitivas:
+Maven resuelve la "cadena de dependencias". Si tu proyecto usa la Librería A, y la Librería A necesita la B, Maven descarga ambas por ti.
+
+## Scopes (Alcances):
+Permiten definir cuándo se necesita la librería:
+
+- `compile`: (Por defecto) Disponible siempre.
+- `test`: Solo para pruebas unitarias (ej. JUnit).
+- `runtime`: Solo necesaria para ejecutar, no para compilar.
+
+## Control de Conflictos:
+Maven utiliza el algoritmo del "camino más corto" para decidir qué versión usar si dos librerías piden versiones distintas de una misma dependencia.
+
+# Maven Central Repository
+
+- Es el repositorio oficial y público que contiene millones de librerías, frameworks y componentes de código abierto listos para usar.
+
+- Es el lugar por defecto donde Maven busca cualquier dependencia que no esté instalada localmente.
+
+## Identificación (GAV):
+Cada artefacto en Central se identifica de forma única mediante tres coordenadas:
+
+- `GroupId`: Identifica a la organización o proyecto (ej. `com.mysql`).
+
+- `ArtifactId`: El nombre específico de la librería (ej. `mysql-connector-j`).
+
+- `Version`: La versión exacta del software (ej. `9.6.0`).
+
+## Seguridad y Disponibilidad:
+Proporciona sumas de comprobación (*checksums*) para garantizar que los archivos descargados no han sido alterados.
+
+
+
+<img width="990" height="549" alt="image" src="https://github.com/user-attachments/assets/a96c1ebd-c282-4e98-adef-7e25acf5534e" />
+<img width="1046" height="534" alt="image" src="https://github.com/user-attachments/assets/c654fc09-2d50-41f3-9878-516e27cd367e" />
+<img width="997" height="552" alt="image" src="https://github.com/user-attachments/assets/cbd8773d-49c4-4ecd-8280-46ec9d1ab751" />
+<img width="979" height="508" alt="image" src="https://github.com/user-attachments/assets/544fe2c9-85d8-4db6-b16a-6f84d293591d" />
+<img width="992" height="564" alt="image" src="https://github.com/user-attachments/assets/b0a59da1-6e88-40f6-9429-5299c43adadb" />
+<img width="1060" height="568" alt="image" src="https://github.com/user-attachments/assets/84dfeabd-6820-4ad6-a521-31bec284afaa" />
+
+
+# Modelado de dominio y mapeo de objetos
+<img width="1050" height="655" alt="image" src="https://github.com/user-attachments/assets/efa68725-473d-46fb-876f-7849ef79fa42" />
+<img width="1049" height="647" alt="image" src="https://github.com/user-attachments/assets/6ffc1ace-ff02-468d-98c8-a064d4174372" />
+
+
+
+
+
+
 
 
 
