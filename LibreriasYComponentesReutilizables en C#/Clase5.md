@@ -270,6 +270,7 @@ namespace Principales {
 - El paquete distribuible se genera usando el comando `dotnet pack`. El archivo generado tiene la extensión `.nupkg`.
 
 ```dotnet pack /p:PackageId="Matematicas" -o ../paquetes```
+
 Nota: -o especifica el folder donde se almacenará el paquete.
 Este comando debe ejecutarse en la carpeta donde está el archivo .csproj del proyecto de biblioteca de clase.
 
