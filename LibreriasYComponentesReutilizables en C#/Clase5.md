@@ -228,3 +228,59 @@ namespace Principales {
 
 </Project>
 ```
+
+# Mediante una Referencia Manual
+
+- El consumo manual consiste en utilizar directamente el archivo DLL.
+
+- Este enfoque se emplea cuando no se dispone del código fuente o cuando la biblioteca es distribuida como archivo compilado.
+
+- Para utilizar la biblioteca, es necesario copiar o ubicar el archivo DLL en una ruta accesible para la aplicación.
+
+- Posteriormente, la aplicación debe agregar una referencia al archivo DLL para poder utilizar sus clases.
+
+
+# Referencia Manual mediante archivo DLL
+
+- Se modifica el archivo `.csproj`, considerando en este ejemplo que el archivo DLL se encuentra dentro de una carpeta `"libs"` en el directorio del proyecto `"Principales"`.
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="Matematicas">
+            <HintPath>libs\Matematicas.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+</Project>
+```
+
+# Distribución de una librería
+
+- Una o más librerías se pueden empaquetar y distribuir a través del sistema de gestión de paquetes distribuibles de .NET llamado NuGet.
+
+- El paquete distribuible se genera usando el comando `dotnet pack`. El archivo generado tiene la extensión `.nupkg`.
+
+```dotnet pack /p:PackageId="Matematicas" -o ../paquetes```
+Nota: -o especifica el folder donde se almacenará el paquete.
+Este comando debe ejecutarse en la carpeta donde está el archivo .csproj del proyecto de biblioteca de clase.
+
+# Referenciar un paquete NuGet
+
+- Para agregar una referencia a un paquete NuGet se usa el comando `dotnet package add`.
+
+- Este comando referenciará las DLLs incluidas dentro del paquete, en el proyecto.
+
+- Este método se usa cuando las librerías están listas para ser distribuidas entre equipos y compañías.
+
+```dotnet package add Matematicas -s ../paquetes```
+
+Nota: -s especifica el folder donde se encuentra el paquete.
