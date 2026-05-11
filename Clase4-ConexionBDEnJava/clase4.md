@@ -1,4 +1,3 @@
-<img width="1005" height="542" alt="image" src="https://github.com/user-attachments/assets/436e0ed9-e792-4a77-96e4-44970c12c873" /><img width="1024" height="1536" alt="fa144a37-e3bf-437d-a523-f7c13efacece" src="https://github.com/user-attachments/assets/405cfdf9-a5a7-4637-b501-d9d104b9d0c1" />
 
 <img width="489" height="597" alt="image" src="https://github.com/user-attachments/assets/a5f6386a-3a48-4937-90d7-9883a39772ee" />
 
@@ -133,8 +132,19 @@ mvn -version
 <img width="914" height="548" alt="image" src="https://github.com/user-attachments/assets/6515b208-0a63-49de-a7a6-16faf72b86df" />
 <img width="1039" height="547" alt="image" src="https://github.com/user-attachments/assets/fedd933d-89c6-4908-a71e-bc33c275b785" />
 <img width="1019" height="557" alt="image" src="https://github.com/user-attachments/assets/364a5bc6-fe7d-4f4c-a14c-65d9e015ae0c" />
+<img width="993" height="544" alt="image" src="https://github.com/user-attachments/assets/02517066-5bb4-450e-8f2e-68e2456c2231" />
 
+# Fases de Maven
 
+- **mvn clean (Limpieza):** Borra la carpeta `target`. Sirve para eliminar archivos de compilaciones anteriores y asegurar que todo se construya desde cero, evitando errores por archivos "basura" o viejos.
+
+- **mvn compile (Compilación):** Toma el código fuente (`.java`) y lo convierte en bytecode. Si hay un error de sintaxis en tu código, el proceso se detiene aquí.
+
+- **mvn package (Empaquetado):** Toma los archivos ya compilados y los guarda en un solo archivo comprimido, normalmente un `JAR` (para librerías) o un `WAR` (para aplicaciones web). El archivo se guarda en la carpeta `target`.
+
+- **mvn install (Instalación Local):** Copia el archivo `JAR/WAR` que generaste en el paso anterior y lo guarda en tu repositorio local (una carpeta oculta en tu PC llamada `.m2`).
+
+- **Efecto Cascada:** Maven es jerárquico. Si ejecutas `mvn install`, Maven ejecutará automáticamente `compile` y `package` antes de instalar.
 
 
 
