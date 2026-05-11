@@ -182,20 +182,9 @@ namespace Principales {
 # Creación de una Biblioteca de Clases en C#
 
 - Una biblioteca de clases puede ser creada utilizando la herramienta de línea de comandos de .NET.
-
-- El comando:
-
-```bash
-dotnet new classlib -n MiLibreria
-```
-permite generar un proyecto de tipo librería.
-
-Este proyecto está diseñado para compilarse en un ensamblado en formato DLL.
-El comando:
-```bash
-dotnet build
-```
-compila el proyecto y genera el archivo DLL con el código reutilizable.
-Esta DLL puede ser referenciada desde otras aplicaciones para reutilizar su funcionalidad.
+- El comando: ```dotnet new classlib -n MiLibreria``` permite generar un proyecto de tipo librería.
+- Este proyecto está diseñado para compilarse en un ensamblado en formato DLL.
+- El comando:```dotnet build```compila el proyecto y genera el archivo DLL con el código reutilizable.
+- Esta DLL puede ser referenciada desde otras aplicaciones para reutilizar su funcionalidad.
 
 
