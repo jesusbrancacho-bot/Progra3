@@ -13,7 +13,7 @@
 ### Constructor de una Clase
 
 ##### En Java
-<pre> 
+´´´java
     public class Estudiante {
     private String nombre;
     private double CRAEST;
@@ -27,7 +27,8 @@
         this.nombre = nombre;
         this.CRAEST = CRAEST;
     }
-} </pre>
+}
+´´´
 
 
 Constructor sin parámetros sirve para que le pueda asignar los valores después de crearlos.
