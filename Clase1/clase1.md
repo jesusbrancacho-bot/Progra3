@@ -1,6 +1,6 @@
 # Objeto
 ==================================================================================================================================================================
-- Representación del estado y comportamiento de un ***objeto real*** o abstracto
+- <mark>Representación del estado y comportamiento</mark> de un ***objeto real*** o abstracto
 - **Estado** está representado por un conjunto de datos.
 - **Comportamiento** está representado por un conjunto de métodos.
 
