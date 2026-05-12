@@ -228,7 +228,7 @@ Capacidad de una clase base de comportarse como cualquier objeto de una clase de
 <img width="1335" height="577" alt="image" src="https://github.com/user-attachments/assets/2d26edd1-27af-49e8-9260-3d31435466e1" />
 
 **Clase figura**
-<pre>
+```java
 public class Figura {
     public double base;
     public double altura;
@@ -242,10 +242,10 @@ public class Figura {
         System.out.println("Procedimiento para calcular el area");
     }
 }
-</pre>
+```
 
 **Clase Triangulo**
-<pre>
+```java
 public class Triangulo extends Figura {
 
     public Triangulo(double base, double altura){
@@ -257,10 +257,10 @@ public class Triangulo extends Figura {
         System.out.println(base * altura / 2);
     }
 }
-</pre>
+```
 
 **Clase Cuadrado**
-<pre>
+```java
 public class Cuadrado extends Figura {
 
     public Cuadrado(double base, double altura){
@@ -272,11 +272,11 @@ public class Cuadrado extends Figura {
         System.out.println(base * altura);
     }
 }
-</pre>
+```
 
 
 **Clase Principal**
-<pre>
+```java
 public class Principal {
 
     public static void main(String[] args){
@@ -293,13 +293,13 @@ public class Principal {
         c2.calcularArea();
     }
 }
-</pre>
+```
 
 #### Polimorfismo Paramétrico
 Se refiere a la capacidad  de escribir código que pueda trabajar con ***cualquier tipo de datos***. En este contexto, "paramétrico" se refiere a los parámetros de tipo que se utilizan
 para definir comportamientos o estructuras de datos que pueden ser parametrizados por un tipo específico.
 
-<pre>
+```java
 public class Contenedor <T> {
     public T dato;
 
@@ -311,11 +311,11 @@ public class Contenedor <T> {
         System.out.println(dato.getClass().getSimpleName());
     }
 }
-</pre>
+```
 
 
 
-<pre>
+``````java
 public class Principal {
     public static void main(String[] args) {
         Contenedor<Integer> contenedorEntero = new Contenedor<>(10);
@@ -325,14 +325,14 @@ public class Principal {
         contenedorString.imprimirTipoDato();
     }
 }
-</pre>
+```
 
 
 #### Encapsulamiento
 Se refiere a ocultar los detalles internos de un objeto y solo exponer las operaciones o funcionalidades. Consiste en agrupar los datos y los métodos que operan sobre esos datos dentro de una clase y controlar el acceso a estos mediante modificadores de acceso ("private", "public", "protected", etc.). Esto significa que los datos son inaccesibles directamente desde fuera de la clase y solo pueden ser modificados o accedidos mediante métodos específicos proporcionados por la clase (conocidos como **getters** y **setters**).
 
 **En Java**
-<pre>
+```java
 public class Estudiante {
     private String nombre;
 
@@ -344,10 +344,10 @@ public class Estudiante {
         this.nombre = nombre;
     }
 }
-</pre>
+```
 
 
-**En C#**
+```csharp
 <pre>
 public class Estudiante {
     private string nombre;
@@ -361,13 +361,19 @@ public class Estudiante {
         }
     }
 }
-</pre>
+```
 
 
 ¿Qué significa **protected** en Java y C#?
-Se utiliza para que una variable o método sea accesible dentro de ***su propia clase, por las clases dervidas (subclases) y por clases en el mismo paquete (en Java) o mismo ensamblado (en C#)***.
+Se utiliza para que una variable o método sea accesible dentro de ***su propia clase, por las clases derivadas (subclases) y por clases en el mismo paquete (en Java) o mismo ensamblado (en C#)***.
 
 Es un nivel de acceso intermedio entre private (solo accesible dentro de la clase) y public (accesible desde cualquier parte del código).
+
+En resumen:
+private → solo dentro de la misma clase.
+protected → dentro de la misma clase y clases hijas.
+public → desde cualquier parte.
+
 
 
 #### Clase abstracta
@@ -380,7 +386,7 @@ Es un nivel de acceso intermedio entre private (solo accesible dentro de la clas
 ***En Java***
 ***Clase Persona***
 
-<pre>
+```java
 public abstract class Persona {
     private String codigoPUCP;
 
@@ -394,10 +400,10 @@ public abstract class Persona {
 
     public abstract void realizarActividad();
 }
-</pre>
+```
 
 **Clase derivada de la abstracta***
-<pre>
+```java
 public class Estudiante extends Persona {
 
     public Estudiante(String codigoPUCP) {
@@ -410,10 +416,10 @@ public class Estudiante extends Persona {
         System.out.println("El estudiante está realizando una actividad académica.");
     }
 }
-</pre>
+```
 
 **Uso**
-<pre>
+```java
 public class Main {
     public static void main(String[] args) {
         Estudiante estudiante = new Estudiante("20222828");
@@ -421,7 +427,7 @@ public class Main {
         estudiante.realizarActividad();  // Imprime el mensaje sobre la actividad
     }
 }   
-</pre>
+```
 
 
 
@@ -433,7 +439,7 @@ public class Main {
 <img width="1239" height="510" alt="image" src="https://github.com/user-attachments/assets/51de1827-2d49-4810-b763-f4b1046a5991" />
 
 **En Java**
-<pre>
+```java
 interface IOperaciones {
     void realizarConsultaMedica();
 }
@@ -449,10 +455,10 @@ public class Cirujano implements IOperaciones {
         cirujano.realizarConsultaMedica();
     }
 }
-</pre>
+```
 
 ***En C#**
-<pre>
+```csharp
 interface IOperaciones {
     void realizarConsultaMedica();
 }
@@ -467,15 +473,14 @@ public class Cirujano : IOperaciones {
         cirujano.realizarConsultaMedica();
     }
 }
-</pre>
+```
 
 #### Miembros Estáticos
 - Constituyen datos, métodos y tipos que forman parte de un tipo de dato (por ejemplo, una clase) pero que no requieren una instancia de este para ser utilizados.
-
 - Los miembros estáticos en programación son aquellos que pertenecen a la clase en sí, en lugar de a las instancias de la clase. Esto significa que puedes acceder a ellos sin necesidad de crear un objeto de la clase. A continuación, te doy ejemplos en Java y C# para ilustrar cómo funcionan.
 
 ***En Java***
-<pre>
+```java
 public class Contador {
     // Miembro estático
     public static int cuenta = 0;
@@ -491,10 +496,10 @@ public class Contador {
         System.out.println("Cuenta: " + Contador.cuenta);  // Salida: Cuenta: 1
     }
 }
-</pre>
+```
 
 ***En C#***
-<pre>
+```csharp
 using System;
 
 public class Contador {
@@ -512,7 +517,7 @@ public class Contador {
         Console.WriteLine("Cuenta: " + Contador.cuenta);  // Salida: Cuenta: 1
     }
 }
-</pre>
+```
 
 
 ### Clase Anidada
@@ -523,7 +528,7 @@ public class Contador {
 **En Java**
 
 ***Clase inner Computador y clase outer Microprocesador***
-<pre>
+```java
 public class Computador {
     public void imprimir(){
         System.out.println("Imprimir desde Computador");
@@ -535,10 +540,10 @@ public class Computador {
         }
     }
 }
-</pre>
+```
 
 ***Clase principal***
-<pre>
+```java
 public class Principal {
     public static void main(String[] args) {
         Computador c = new Computador();
@@ -547,12 +552,12 @@ public class Principal {
         m.imprimir();
     }
 }
-</pre>
+```
 
 
 ***En C#***
 
-<pre>
+```csharp
 public class Computador {
     public void imprimir(){
         System.Console.WriteLine("Imprimir desde Computador");
@@ -564,10 +569,10 @@ public class Computador {
         }
     }
 }
-</pre>
+```
 
 
-<pre>
+```csharp
 public class Principal {
     public static void Main(string[] args) {
         Computador c = new Computador();
@@ -576,7 +581,7 @@ public class Principal {
         m.imprimir();
     }
 }
-</pre>
+```
 
 
 ¿Cuándo es correcto usar clases anidadas?
@@ -592,7 +597,7 @@ Las clases anidadas son útiles cuando tienes una clase que está estrechamente 
 La enumeración (también denominado enum) proporciona una manera eficaz de definir un conjunto de constantes integrales con nombre que pueden asignarse a una variable.
 
 **En Java**
-<pre>
+```java
 enum Dias {
     Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sabado
 }
@@ -602,10 +607,10 @@ public class Principal {
         Dias d = Dias.Domingo;
     }
 }
-</pre>
+```
 
 **En C#**
-<pre>
+```csharp
 enum Dias {
     Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sabado
 }
@@ -615,11 +620,11 @@ public class Principal {
         Dias hoyDia = Dias.Lunes;
     }
 }
-</pre>
+```
 
 
 #### Arreglos
-<pre>
+```java
 public class Prueba {
     public static void Main() {
         // Unidimensionales
@@ -637,9 +642,9 @@ public class Prueba {
         aaa[2] = new int[4]; //Cantidad de columnas en fila 2
     }
 }
-</pre>
+```
 
-<pre>
+```
 public class Arreglo {
     public static void main(String[] args) {
         // Unidimensionales
@@ -659,7 +664,7 @@ public class Arreglo {
         };
     }
 }
-</pre>
+```
 
 #### Indizadores
 
@@ -667,7 +672,7 @@ Los ***indizadores*** son un tipo especial de ***propiedad*** en algunos lenguaj
 
 En C#
 ***Departamento***
-<pre>
+```csharp
 public class Departamento {
     private string[] empleados = new string[10];
 
@@ -681,10 +686,10 @@ public class Departamento {
         }
     }
 }
-</pre>
+```
 
 ***Principal***
-<pre>
+```csharp
 public class Principal {
     public static void Main() {
         Departamento d = new Departamento();
@@ -694,12 +699,12 @@ public class Principal {
         System.Console.WriteLine(d[1]);
     }
 }
-</pre>
+```
 
 #### Manejo de Fechas - Date JAVA
 
 ***En C#***
-<pre>
+```csharp
 using System;
 
 public class Principal {
@@ -709,10 +714,10 @@ public class Principal {
         System.Console.WriteLine(fecha.ToString("dd-MM-yyyy HH:mm"));
     }
 }   
-</pre>
+```
 
 ***En JAVA***
-<pre>
+```java
 import java.util.Date;
 import java.text.SimpleDateFormat;
 
@@ -723,23 +728,23 @@ public class Principal {
         System.out.println(sdf.format(fecha));
     }
 }
-</pre>
+```
 
 #### Lectura por consola
 
 ***En C#***
-<pre>
+```csharp
 public class Principal {
     public static void Main(string[] args){
         string nombre = System.Console.ReadLine();
         System.Console.WriteLine(nombre);
     }
 }
-</pre>
+```
 
 ***En JAVA***
 Primera forma
-<pre>
+```java
 import java.util.Scanner;
 
 public class Principal {
@@ -750,10 +755,10 @@ public class Principal {
         System.out.println(nombre);
     }
 }    
-</pre>
+```
 
 Segunda forma
-<pre>
+```java
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -765,12 +770,12 @@ public class Principal {
         System.out.println(nombre);
     }
 }
-</pre>
+```
 
 #### Manejo de Listas
 
 ***En C#***
-<pre>
+```csharp
 using System.Collections.Generic;
 
 class Empleado{
@@ -789,10 +794,10 @@ public class Principal{
         }
     }
 }
-</pre>
+```
 
 ***BindingList***
-<pre>
+```csharp
 using System.ComponentModel;
 
 class Empleado{
@@ -811,10 +816,10 @@ public class Principal{
         }
     }
 }
-</pre>
+```
 
 ***En Java***
-<pre>
+```java
 import java.util.ArrayList;
 
 class Empleado{
@@ -833,13 +838,13 @@ public class Principal{
         }
     }
 }
-</pre>
+```
 
 #### instanceof (JAVA)- is (C#)
 - Son operadores que se utilizan para comprobar si un objeto es una instancia de una clase específica, una instancia de una subclase o una instancia de una clase que implementa una determinada clase de tipo interface.
 - Los operadores devuelven **true** si el objeto es una instancia de la clase especificada o de alguna de sus subclases, o si el objeto implementa la interface especificada. De lo contrario, devuelve ***false***.
 
-#### En Java
+```java
 <pre>
 class Auto extends Vehiculo { }
 class Moto extends Vehiculo { }
@@ -854,10 +859,10 @@ public class Principal {
         System.out.println(veh01 instanceof Moto);
     }
 }
-</pre>
+```
 
 #### En C#
-<pre>
+```csharp
 class Auto : Vehiculo { }
 class Moto : Vehiculo { }
 class Vehiculo { }
@@ -871,13 +876,13 @@ public class Principal {
         System.Console.WriteLine(veh01 is Moto);
     }
 }
-</pre>
+```
 
 #### Programando relaciones entre clases
 
 <img width="1315" height="643" alt="image" src="https://github.com/user-attachments/assets/a490f861-0328-4bd8-97c1-d37c693ef760" />
 
-<pre>
+```java
 import java.util.ArrayList;
 
 class Cliente{
@@ -903,7 +908,7 @@ class OrdenCompra{
         this.cliente = cliente;
     }
 }
-</pre>
+```
 
 La clase OrdenCompra tiene los métodos set y get para el atributo cliente porque cliente es una referencia a un objeto de la clase Cliente. Estos métodos permiten acceder a este atributo y modificarlo de forma controlada.
 
