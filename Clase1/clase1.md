@@ -85,7 +85,7 @@ public class Estudiante {
 
 ##### En C#
 
-<pre>
+```csharp
 public class Estudiante {
     private string nombre;
     private double CRAEST;
@@ -97,7 +97,7 @@ public class Estudiante {
         System.Console.WriteLine("Se esta destruyendo un objeto");
     }
 }
-</pre>
+```
 
 
 # Herencia
@@ -109,7 +109,7 @@ public class Estudiante {
 
 ##### En Java
 
-<pre>
+```java
 // Clase base: Profesor
 public class Profesor {
     private String nombre;
@@ -161,8 +161,7 @@ public class Main {
         System.out.println("Salario mensual: " + profesor.calcularSalarioMensual());
     }
 }
-</pre>
-
+```
 
 
 ##### En C#
