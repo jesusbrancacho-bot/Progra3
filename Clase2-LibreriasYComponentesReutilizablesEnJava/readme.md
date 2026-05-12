@@ -144,7 +144,37 @@ Main-Class: principales/Principal
 C:\LP2>java -jar mipaqueteejecutable.jar
 </pre>
 
-  
+
+### Entender mejor:
+#### 1. JAR normal = mochila de clases
+Es un archivo que guarda clases para que **otro programa las use**.
+
+Ejemplo: matematicas.jar
+Dentro tiene: Suma.class Resta.class
+
+Pero **no arranca solo¨**
+
+#### 2. JAR ejecutable = programa listo para abrir
+Es un .jar que sí puede correr solo porque tiene una clase con:
+
+```java
+public static void main(String[] args)
+```
+Y además el JAR sabe cuál es esa clase principal.
+
+Se ejecuta así:
+
+```text
+java -jar miPrograma.jar
+```
+
+El JAR ejecutable se abre como programa.
+El JAR normal se importa o se incluye para usar sus clases.
+Así se importa:
+
+```text
+javac -cp calculadora.jar Principal.java
+```
 
 
 
