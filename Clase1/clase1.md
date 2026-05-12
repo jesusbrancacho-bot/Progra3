@@ -315,7 +315,7 @@ public class Contenedor <T> {
 
 
 
-``````java
+```java
 public class Principal {
     public static void main(String[] args) {
         Contenedor<Integer> contenedorEntero = new Contenedor<>(10);
