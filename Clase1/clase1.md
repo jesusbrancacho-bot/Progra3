@@ -33,20 +33,20 @@
 
 Constructor sin parámetros sirve para que le pueda asignar los valores después de crearlos.
 
-<pre> 
+```java
  Estudiante estudiante1 = new Estudiante();  // Se crea un objeto sin valores definidos
  estudiante1.setNombre("Ana");
  estudiante1.setCRAEST(16.5);   
-</pre>
+```
 
 Constructor con parámetros sirve para que le pueda asignar los valores mientras se construye el objeto
 
-<pre> 
+```java 
 Estudiante estudiante2 = new Estudiante("Carlos", 19.2);  // Se crea un objeto con los valores definidos
-</pre>
+```
 
 ##### En C#
-<pre>
+```csharp
 public class Estudiante {
     private string nombre;
     private double CRAEST;
@@ -59,7 +59,7 @@ public class Estudiante {
         this.CRAEST = CRAEST;
     }
 }
-</pre>
+```
 
 
 ### Destructor de una clase
@@ -68,7 +68,7 @@ En Java y C# no es necesario implementar un método destructor, ya que el Garbag
 
 ##### En Java
 
-<pre>
+```java
 public class Estudiante {
     private String nombre;
     private double CRAEST;
@@ -80,7 +80,7 @@ public class Estudiante {
         System.out.println("El objeto se esta destruyendo");
     }
 }
-</pre>
+```
 
 
 ##### En C#
