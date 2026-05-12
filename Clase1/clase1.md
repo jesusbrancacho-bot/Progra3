@@ -164,8 +164,9 @@ public class Main {
 </pre>
 
 
-<pre>
+
 ##### En C#
+```csharp
 // Clase base: Profesor
 public class Profesor {
     private string nombre;
@@ -216,7 +217,7 @@ class Program {
         Console.WriteLine($"Salario mensual: {profesor.calcularSalarioMensual()}");
     }
 }
-</pre>
+```
 
 ### Polimorfismo
 Propiedad de enviar mensajes sintacticamente iguales a objetos de tipos distintos. El único requisito que deben cumplir los objetos que se utilizan de manera polimorfica es saber responder a los mensajes que se envía.
