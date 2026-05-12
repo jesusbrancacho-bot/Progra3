@@ -1,14 +1,14 @@
 # Objeto
 ==================================================================================================================================================================
-- <mark>Representación del estado y comportamiento</mark> de un ***objeto real*** o abstracto
-- <mark>**Estado**</mark>está representado por un <mark>conjunto de datos</mark>.
+- <mark>Representación del estado y comportamiento</mark> de un ***objeto real*** o **abstracto**.
+- <mark>**Estado**</mark> está representado por un <mark>conjunto de datos</mark>.
 - <mark>**Comportamiento**</mark> está representado por un <mark>conjunto de métodos</mark>.
 
 # Clase 
 ==================================================================================================================================================================
 - Un conjunto de ***objetos*** que comparten el mismo comportamiento y tipos de sus datos (no los valores) se dice que pertenecen a la misma clase.
-- Una clase es un tipo de Dato, cuyas instancias son objetos.
-- Una clase contiene la descripción de los datos y métodos de un conjunto de objetos.
+- Una <mark>clase es un tipo de Dato</mark>, cuyas <mark>instancias son objetos</mark>.
+- Una clase contiene la <mark>descripción de los datos</mark> y <mark>métodos</mark> de un conjunto de objetos.
 
 ### Constructor de una Clase
 
@@ -21,7 +21,6 @@
     public Estudiante() {
         //Se utilza esto para:
         //- La asignación de valores más tarde: Crea el objeto primero y luego le asigna valores
-        //- 
     }
 
     public Estudiante(String nombre, double CRAEST) {
@@ -32,6 +31,7 @@
 
 
 Constructor sin parámetros sirve para que le pueda asignar los valores después de crearlos.
+
 <pre> 
  Estudiante estudiante1 = new Estudiante();  // Se crea un objeto sin valores definidos
  estudiante1.setNombre("Ana");
